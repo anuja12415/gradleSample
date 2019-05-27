@@ -5,16 +5,18 @@ import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.clients.producer.ProducerRecord;
 import org.apache.kafka.common.protocol.types.Field;
 import org.apache.kafka.common.serialization.*;
+import utils.Constants;
+
 import java.util.Properties;
 
 public class ProducerDemo {
 	public static void main(String[] args) {
 			System.out.println("Producer Demo class is here");
-			String bootstrapServer = "localhost:50002";
+
 
 			//set Producer properties
 			Properties properties = new Properties();
-			properties.setProperty(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServer);
+			properties.setProperty(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, Constants.bootstrapServer);
 			properties.setProperty(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG,StringSerializer.class.getName());
 			properties.setProperty(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
 
